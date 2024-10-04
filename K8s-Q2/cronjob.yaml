@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello-sre-job
+spec:
+  schedule: "*/30 * * * *"  # Runs every 30 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello-sre-container
+            image: busybox  # Using a lightweight image
+            args:
+            - /bin/sh
+            - -c
+            - echo "Hello SRE"  # Command to output "Hello SRE"
+          restartPolicy: OnFailure  # Restart the job only if it fails
