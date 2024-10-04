@@ -55,6 +55,8 @@ Carefully examine the output to ensure it matches your desired infrastructure.
 
 `   terraform destroy   `
 
+**Note:** The `terraform.tfstate.output` file is now obsolete, as the resources have been destroyed and the contents are no longer functional.
+
 
 #### Other Commands
 
